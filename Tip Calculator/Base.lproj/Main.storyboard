@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,7 +23,10 @@
                                     <constraint firstAttribute="width" constant="167" id="fHn-zW-HVQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <connections>
+                                    <action selector="billAmountInput:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="kzs-dU-Whb"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xh-Py-gyo">
                                 <rect key="frame" x="160.5" y="341" width="93" height="21"/>
@@ -40,14 +43,23 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Xd-Lh-xy1">
                                 <rect key="frame" x="192" y="279" width="30" height="30"/>
                                 <state key="normal" title="18%"/>
+                                <connections>
+                                    <action selector="eighteenPercentTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="znj-zK-Myb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Kn-je-clJ">
                                 <rect key="frame" x="115" y="279" width="30" height="30"/>
                                 <state key="normal" title="15%"/>
+                                <connections>
+                                    <action selector="fifteenPercentTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kJv-lL-obv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qv9-Fm-oHw">
                                 <rect key="frame" x="264" y="279" width="32" height="30"/>
                                 <state key="normal" title="20%"/>
+                                <connections>
+                                    <action selector="twentyPercentTip:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQI-pY-2x7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -70,6 +82,11 @@
                             <constraint firstItem="5Xd-Lh-xy1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kws-fY-Xhr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billInput" destination="cG2-kL-43t" id="M73-31-dyJ"/>
+                        <outlet property="tipAmountLabel" destination="3xh-Py-gyo" id="ePU-ke-r7U"/>
+                        <outlet property="totalLabel" destination="cSS-NW-lka" id="KVB-oS-38t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
